@@ -1,0 +1,20 @@
+{
+  "name": "dex",
+  "version": "1.0.0",
+  "description": "A project using Parcel bundler",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "parcel-reporter-static-files-copy": "^1.5.3"
+  },
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
+  },
+  "dependencies": {
+    "fuzzysearch": "^1.0.3"
+  }
+}

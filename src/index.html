@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Stats</title>
+    <style>
+        :root {
+            --pokedex-red: #e71d23;
+            --pokedex-dark: #2a2a2a;
+            --pokedex-light: #f8f8f8;
+            --pokedex-screen: #88c070;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', Arial, sans-serif;
+            background-color: var(--pokedex-dark);
+            color: var(--pokedex-light);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .pokedex-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--pokedex-red);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .pokedex-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--pokedex-dark);
+            border-radius: 15px;
+            border: 5px solid var(--pokedex-light);
+        }
+
+        .pokedex-header h1 {
+            color: var(--pokedex-red);
+            text-shadow: 3px 3px 0 var(--pokedex-dark);
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--pokedex-dark);
+            border-radius: 15px;
+            border: 5px solid var(--pokedex-light);
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 3px solid var(--pokedex-dark);
+            border-radius: 10px;
+            background-color: var(--pokedex-light);
+            color: var(--pokedex-dark);
+            font-family: 'Press Start 2P', Arial, sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--pokedex-red);
+        }
+
+        .pokemon-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pokemon-card {
+            background-color: var(--pokedex-dark);
+            border: 5px solid var(--pokedex-light);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pokemon-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px var(--pokedex-screen);
+        }
+
+        .pokemon-sprite {
+            width: 120px;
+            height: 120px;
+            image-rendering: pixelated;
+            margin-bottom: 15px;
+            background-color: var(--pokedex-screen);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .pokedex-number {
+            color: var(--pokedex-light);
+            font-size: 0.8em;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .pokemon-card h2 {
+            margin: 10px 0;
+            color: var(--pokedex-red);
+            text-shadow: 2px 2px 0 var(--pokedex-dark);
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .base-stats {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: var(--pokedex-light);
+        }
+
+        .stat-value {
+            position: relative;
+            cursor: help;
+        }
+
+        .stat-value:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--pokedex-dark);
+            color: var(--pokedex-light);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            z-index: 1;
+            border: 2px solid var(--pokedex-light);
+        }
+
+        .pokemon-stats {
+            margin-top: 15px;
+            width: 100%;
+            background-color: var(--pokedex-dark);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat {
+            margin: 8px 0;
+            font-size: 0.8em;
+            line-height: 1.5;
+            text-align: center;
+            width: 100%;
+        }
+
+        .days-ago {
+            font-size: 0.85em;
+            color: var(--pokedex-screen);
+            margin-top: 2px;
+            display: block;
+        }
+
+        .stat:first-child {
+            color: var(--pokedex-red);
+            font-weight: bold;
+        }
+
+        .cp-levels {
+            color: var(--pokedex-light);
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .pokemon-list {
+                grid-template-columns: 1fr;
+            }
+
+            .pokedex-header h1 {
+                font-size: 1.5em;
+            }
+
+            .pokedex-container {
+                padding: 10px;
+            }
+
+            .search-container {
+                padding: 10px;
+            }
+
+            .search-input {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pokedex-container">
+        <div class="pokedex-header">
+            <h1>POKEDEX</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="SEARCH POKEMON...">
+        </div>
+        <div id="pokemonList" class="pokemon-list"></div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
