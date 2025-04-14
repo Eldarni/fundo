@@ -159,63 +159,39 @@ function hasSameHPAtLevel(pokemon, level) {
     };
 }
 
-// Function to create a Pokemon card
-function createPokemonCard(pokemon) {
-    const card = document.createElement('div');
-    card.className = 'pokemon-card';
+// Get modal elements
+const modal = document.getElementById('pokemonModal');
+const modalPokemonName = document.getElementById('modalPokemonName');
+const modalPokemonSprite = document.getElementById('modalPokemonSprite');
+const modalPokemonStats = document.getElementById('modalPokemonStats');
+const closeModal = document.getElementsByClassName('close')[0];
 
-    const number = document.createElement('div');
-    number.className = 'pokedex-number';
-    number.textContent = `#${pokemon.number.toString().padStart(3, '0')}`;
+// Add click event to close modal
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
 
-    const sprite = document.createElement('img');
-    sprite.className = 'pokemon-sprite';
-
-    // Handle alternate forms in sprite filename
-    let spriteFilename = pokemon.number.toString();
-    if (pokemon.name.includes('Galarian')) {
-        spriteFilename += '_galarian';
-    } else if (pokemon.name.includes('Alolan')) {
-        spriteFilename += '_alolan';
-    } else if (pokemon.name.includes('Hisuian')) {
-        spriteFilename += '_hisuian';
-    } else if (pokemon.name.includes('Paldean')) {
-        spriteFilename += '_paldean';
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-    sprite.src = `sprites/${spriteFilename}.png`;
-    sprite.alt = pokemon.name;
+}
 
-    const name = document.createElement('h2');
-    name.textContent = pokemon.name.toUpperCase();
+// Function to show modal with Pokémon details
+function showPokemonDetails(pokemon) {
+    modalPokemonName.textContent = pokemon.name;
+    modalPokemonSprite.src = `sprites/${pokemon.number}.png`;
+    modalPokemonSprite.alt = pokemon.name;
 
-    const baseStats = document.createElement('div');
-    baseStats.className = 'base-stats';
-    baseStats.innerHTML = `
-        <span class="stat-value" data-tooltip="Attack">${pokemon.atk}</span>
-        <span>•</span>
-        <span class="stat-value" data-tooltip="Defense">${pokemon.def}</span>
-        <span>•</span>
-        <span class="stat-value" data-tooltip="HP">${pokemon.hit}</span>
-    `;
+    // Clear previous stats
+    modalPokemonStats.innerHTML = '';
 
-    const stats = document.createElement('div');
-    stats.className = 'pokemon-stats';
+    // Add CP information
+    const cpInfo = document.createElement('div');
+    cpInfo.className = 'pokemon-stats';
 
-    const cpLevels = document.createElement('div');
-    cpLevels.className = 'stat cp-levels';
-    cpLevels.innerHTML = `
-        <div style="color: var(--pokedex-light)" class="stat-value" data-tooltip="CP range from 10/10/10 to 15/15/15 IVs">CP RANGES:</div>
-        <div style="color: var(--pokedex-light)">L15: ${calculateCP(pokemon, 10, 10, 10, 15)} - ${calculateCP(pokemon, 15, 15, 15, 15)}</div>
-        <div style="color: var(--pokedex-light)">L20: ${calculateCP(pokemon, 10, 10, 10, 20)} - ${calculateCP(pokemon, 15, 15, 15, 20)}</div>
-        <div style="color: var(--pokedex-light)">L25: ${calculateCP(pokemon, 10, 10, 10, 25)} - ${calculateCP(pokemon, 15, 15, 15, 25)}</div>
-        <div style="color: var(--pokedex-light)">L30: ${calculateCP(pokemon, 10, 10, 10, 30)} - ${calculateCP(pokemon, 15, 15, 15, 30)}</div>
-        <div style="color: var(--pokedex-light)">L35: ${calculateCP(pokemon, 10, 10, 10, 35)} - ${calculateCP(pokemon, 15, 15, 15, 35)}</div>
-        <div style="color: var(--pokedex-light)">L40: ${calculateCP(pokemon, 10, 10, 10, 40)} - ${calculateCP(pokemon, 15, 15, 15, 40)}</div>
-        <div style="color: var(--pokedex-light)">L50: ${calculateCP(pokemon, 10, 10, 10, 50)} - ${calculateCP(pokemon, 15, 15, 15, 50)}</div>
-    `;
-
-    const hpComparison = document.createElement('div');
-    hpComparison.className = 'stat';
+    // Calculate fundo information
     const hp40 = hasSameHPAtLevel(pokemon, 40);
     const hp50 = hasSameHPAtLevel(pokemon, 50);
     const hp51 = hasSameHPAtLevel(pokemon, 51);
@@ -225,39 +201,65 @@ function createPokemonCard(pokemon) {
     if (hp50.same) fundoLevels.push('L50');
     if (hp51.same) fundoLevels.push('L51');
 
-    if (fundoLevels.length > 0) {
-        hpComparison.innerHTML = `<span style="color: var(--pokedex-screen)">Fundo at ${fundoLevels.join(' • ')}</span>`;
-    }
+    // Format release date
+    const releaseDate = pokemon.released ? new Date(pokemon.released) : null;
+    const releaseInfo = releaseDate
+        ? `RELEASED: ${releaseDate.toLocaleDateString()}
+           <span class="days-ago">${Math.floor((new Date() - releaseDate) / (1000 * 60 * 60 * 24))} days ago</span>`
+        : 'RELEASED: Not Released';
 
-    const released = document.createElement('div');
-    released.className = 'stat';
-    const releaseDate = new Date(pokemon.released);
-    const daysAgo = Math.floor((new Date() - releaseDate) / (1000 * 60 * 60 * 24));
-    released.innerHTML = `
-        RELEASED: ${releaseDate.toLocaleDateString()}
-        <span class="days-ago">${daysAgo} days ago</span>
+    // Format shiny release date
+    const shinyDate = pokemon.shiny ? new Date(pokemon.shiny) : null;
+    const shinyInfo = shinyDate
+        ? `SHINY RELEASED: ${shinyDate.toLocaleDateString()}
+           <span class="days-ago">${Math.floor((new Date() - shinyDate) / (1000 * 60 * 60 * 24))} days ago</span>`
+        : 'SHINY RELEASED: Not Released';
+
+    cpInfo.innerHTML = `
+        <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
+        <div class="base-stats">
+            <span class="stat-value" data-tooltip="Attack">${pokemon.atk}</span>
+            <span>•</span>
+            <span class="stat-value" data-tooltip="Defense">${pokemon.def}</span>
+            <span>•</span>
+            <span class="stat-value" data-tooltip="HP">${pokemon.hit}</span>
+        </div>
+        <div class="stat cp-levels">
+            <div style="color: var(--pokedex-light)" class="stat-value" data-tooltip="CP range from 10/10/10 to 15/15/15 IVs">CP RANGES:</div>
+            <div style="color: var(--pokedex-light)">L15: ${calculateCP(pokemon, 10, 10, 10, 15)} - ${calculateCP(pokemon, 15, 15, 15, 15)}</div>
+            <div style="color: var(--pokedex-light)">L20: ${calculateCP(pokemon, 10, 10, 10, 20)} - ${calculateCP(pokemon, 15, 15, 15, 20)}</div>
+            <div style="color: var(--pokedex-light)">L25: ${calculateCP(pokemon, 10, 10, 10, 25)} - ${calculateCP(pokemon, 15, 15, 15, 25)}</div>
+            <div style="color: var(--pokedex-light)">L30: ${calculateCP(pokemon, 10, 10, 10, 30)} - ${calculateCP(pokemon, 15, 15, 15, 30)}</div>
+            <div style="color: var(--pokedex-light)">L35: ${calculateCP(pokemon, 10, 10, 10, 35)} - ${calculateCP(pokemon, 15, 15, 15, 35)}</div>
+            <div style="color: var(--pokedex-light)">L40: ${calculateCP(pokemon, 10, 10, 10, 40)} - ${calculateCP(pokemon, 15, 15, 15, 40)}</div>
+            <div style="color: var(--pokedex-light)">L50: ${calculateCP(pokemon, 10, 10, 10, 50)} - ${calculateCP(pokemon, 15, 15, 15, 50)}</div>
+        </div>
+        ${fundoLevels.length > 0 ? `<div class="stat"><span style="color: var(--pokedex-screen)">Fundo at ${fundoLevels.join(' • ')}</span></div>` : ''}
+        <div class="stat">
+            ${releaseInfo}
+        </div>
+        <div class="stat">
+            ${shinyInfo}
+        </div>
+    `;
+    modalPokemonStats.appendChild(cpInfo);
+
+    // Show the modal
+    modal.style.display = "block";
+}
+
+// Function to create a Pokemon card
+function createPokemonCard(pokemon) {
+    const card = document.createElement('div');
+    card.className = 'pokemon-card';
+    card.innerHTML = `
+        <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
+        <img class="pokemon-sprite" src="sprites/${pokemon.number}.png" alt="${pokemon.name}">
+        <h3>${pokemon.name}</h3>
     `;
 
-    const shiny = document.createElement('div');
-    shiny.className = 'stat';
-    const shinyDate = new Date(pokemon.shiny);
-    const shinyDaysAgo = Math.floor((new Date() - shinyDate) / (1000 * 60 * 60 * 24));
-    shiny.innerHTML = `
-        SHINY RELEASED: ${shinyDate.toLocaleDateString()}
-        <span class="days-ago">${shinyDaysAgo} days ago</span>
-    `;
-
-    stats.appendChild(number);
-    stats.appendChild(cpLevels);
-    stats.appendChild(hpComparison);
-    stats.appendChild(released);
-    stats.appendChild(shiny);
-
-    card.appendChild(number);
-    card.appendChild(sprite);
-    card.appendChild(name);
-    card.appendChild(baseStats);
-    card.appendChild(stats);
+    // Add click event to show modal
+    card.addEventListener('click', () => showPokemonDetails(pokemon));
 
     return card;
 }
