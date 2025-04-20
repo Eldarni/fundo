@@ -205,14 +205,14 @@ function showPokemonDetails(pokemon) {
     const releaseDate = pokemon.released ? new Date(pokemon.released) : null;
     const releaseInfo = releaseDate
         ? `RELEASED: ${releaseDate.toLocaleDateString()}
-           <span class="days-ago">${Math.floor((new Date() - releaseDate) / (1000 * 60 * 60 * 24))} days ago</span>`
+           <span class="days-ago">${Math.floor((new Date() - releaseDate) / (1000 * 60 * 60 * 24)).toLocaleString('en-GB')} days ago</span>`
         : 'RELEASED: Not Released';
 
     // Format shiny release date
     const shinyDate = pokemon.shiny ? new Date(pokemon.shiny) : null;
     const shinyInfo = shinyDate
         ? `SHINY RELEASED: ${shinyDate.toLocaleDateString()}
-           <span class="days-ago">${Math.floor((new Date() - shinyDate) / (1000 * 60 * 60 * 24))} days ago</span>`
+           <span class="days-ago">${Math.floor((new Date() - shinyDate) / (1000 * 60 * 60 * 24)).toLocaleString('en-GB')} days ago</span>`
         : 'SHINY RELEASED: Not Released';
 
     cpInfo.innerHTML = `
@@ -290,9 +290,18 @@ function updatePokemonList(searchTerm = '') {
 
 // Get the search input and add event listener
 const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('input', (e) => {
-    updatePokemonList(e.target.value);
-});
 
-// Initial render
-updatePokemonList();
+// Load saved search value from localStorage and apply it
+const savedSearch = localStorage.getItem('pokemonSearch') || '';
+searchInput.value = savedSearch;
+if (savedSearch) {
+    updatePokemonList(savedSearch);
+}
+
+// Add event listener for search input
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    // Save search value to localStorage
+    localStorage.setItem('pokemonSearch', searchTerm);
+    updatePokemonList(searchTerm);
+});

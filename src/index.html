@@ -217,27 +217,28 @@
             }
         }
 
-        /* Modal Styles */
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 1;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow-y: auto;
         }
 
         .modal-content {
             background-color: var(--pokedex-dark);
             margin: 5% auto;
             padding: 20px;
-            border: 2px solid var(--pokedex-light);
+            border: 1px solid var(--pokedex-light);
             width: 80%;
             max-width: 600px;
-            border-radius: 8px;
-            color: var(--pokedex-light);
+            border-radius: 5px;
+            position: relative;
         }
 
         .modal-header {
@@ -245,6 +246,13 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            width: 100%;
+            text-align: center;
+            margin: 0;
         }
 
         .close {
@@ -252,6 +260,9 @@
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 0;
         }
 
         .close:hover {
@@ -282,6 +293,49 @@
 
         .pokemon-card:hover {
             transform: scale(1.02);
+        }
+
+        @media screen and (max-width: 768px) {
+            .modal-content {
+                margin: 10% auto;
+                width: 90%;
+                padding: 15px;
+            }
+
+            .modal-header {
+                flex-direction: row;
+                align-items: center;
+                gap: 0;
+            }
+
+            .modal-header h2 {
+                font-size: 1.2em;
+                padding-right: 30px; /* Make room for the close button */
+            }
+
+            .close {
+                font-size: 24px;
+            }
+
+            .modal-body {
+                flex-direction: column;
+            }
+
+            .sprite-container {
+                margin: 0 auto 20px;
+            }
+
+            .pokemon-stats {
+                width: 100%;
+            }
+
+            .stat {
+                font-size: 0.9em;
+            }
+
+            .stat.cp-levels {
+                font-size: 0.85em;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
