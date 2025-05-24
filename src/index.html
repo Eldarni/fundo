@@ -84,6 +84,46 @@
             margin-top: 20px;
         }
 
+        /* Footer styles */
+        footer {
+            background-color: var(--pokedex-dark);
+            color: var(--pokedex-light);
+            padding: 1rem;
+            text-align: center;
+            margin-top: 4rem;
+
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-wrap: pretty;
+        }
+
+        .footer-content p {
+            margin: 0.3rem 0;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-content a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
         .pokemon-card {
             background-color: var(--pokedex-dark);
             border: 5px solid var(--pokedex-light);
@@ -341,6 +381,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="pokedex-container">
         <div class="pokedex-header">
             <h1>POKEDEX</h1>
@@ -350,6 +391,13 @@
         </div>
         <div id="pokemonList" class="pokemon-list"></div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Pokémon and Pokémon character names are trademarks of Nintendo.</p>
+            <p>Raid data provided by <a href="https://github.com/bigfoott/ScrapedDuck" target="_blank" rel="noopener noreferrer">ScrapedDuck</a></p>
+        </div>
+    </footer>
 
     <!-- Popup Modal -->
     <div id="pokemonModal" class="modal">

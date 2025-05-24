@@ -1,0 +1,38 @@
+/* Footer styles */
+footer {
+    background-color: var(--pokedex-dark);
+    color: var(--pokedex-light);
+    padding: 1rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 2px solid var(--pokedex-screen);
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content p {
+    margin: 0.3rem 0;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}

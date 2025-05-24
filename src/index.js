@@ -276,14 +276,56 @@ function fuzzySearch(searchTerm, pokemon) {
     return fuzzysearch(searchLower, nameLower);
 }
 
+// Function to fetch and cache raid data
+async function fetchRaidData() {
+    const cachedData = localStorage.getItem('raidData');
+    const cacheTime = localStorage.getItem('raidDataTime');
+    const currentTime = new Date().getTime();
+
+    // Check if we have cached data that's less than 5 minutes old
+    if (cachedData && cacheTime && (currentTime - parseInt(cacheTime)) < 5 * 60 * 1000) {
+        return JSON.parse(cachedData);
+    }
+
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/bigfoott/ScrapedDuck/data/raids.min.json');
+        const data = await response.json();
+
+        // Cache the data and timestamp
+        localStorage.setItem('raidData', JSON.stringify(data));
+        localStorage.setItem('raidDataTime', currentTime.toString());
+
+        return data;
+    } catch (error) {
+        console.error('Error fetching raid data:', error);
+        return null;
+    }
+}
+
+// Function to get current raid bosses
+function getCurrentRaidBosses() {
+    const raidData = JSON.parse(localStorage.getItem('raidData') || '[]');
+    return raidData.map(raid => raid.name);
+}
+
 // Function to update the Pokemon list based on search
 function updatePokemonList(searchTerm = '') {
     const container = document.getElementById('pokemonList');
     container.innerHTML = ''; // Clear the container
 
-    const filteredPokemon = sortedPokemon.filter(pokemon =>
-        fuzzySearch(searchTerm, pokemon)
-    );
+    let filteredPokemon = sortedPokemon;
+
+    // If no search term and we have raid data, show raid bosses
+    if (!searchTerm && localStorage.getItem('raidData')) {
+        const raidBosses = getCurrentRaidBosses();
+        filteredPokemon = sortedPokemon.filter(pokemon =>
+            raidBosses.includes(pokemon.name)
+        );
+    } else {
+        filteredPokemon = sortedPokemon.filter(pokemon =>
+            fuzzySearch(searchTerm, pokemon)
+        );
+    }
 
     filteredPokemon.forEach(pokemon => {
         const card = createPokemonCard(pokemon);
@@ -297,9 +339,15 @@ const searchInput = document.getElementById('searchInput');
 // Load saved search value from localStorage and apply it
 const savedSearch = localStorage.getItem('pokemonSearch') || '';
 searchInput.value = savedSearch;
-if (savedSearch) {
-    updatePokemonList(savedSearch);
-}
+
+// Fetch raid data and update display
+fetchRaidData().then(() => {
+    if (!savedSearch) {
+        updatePokemonList(); // Show raid bosses by default if no saved search
+    } else {
+        updatePokemonList(savedSearch);
+    }
+});
 
 // Add event listener for search input
 searchInput.addEventListener('input', (e) => {
