@@ -259,7 +259,7 @@ function createPokemonCard(pokemon) {
         <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
         ${pokemon.shiny ? '<div class="shiny-indicator">✨</div>' : ''}
         <img class="pokemon-sprite" src="sprites/${pokemon.number}.png" alt="${pokemon.name}">
-        <h3>${pokemon.name}</h3>
+        <div class="pokemon-name">${pokemon.name}</div>
     `;
 
     // Add click event to show modal
