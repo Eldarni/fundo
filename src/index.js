@@ -169,12 +169,14 @@ const closeModal = document.getElementsByClassName('close')[0];
 // Add click event to close modal
 closeModal.onclick = function() {
     modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable scrolling
 }
 
 // Close modal when clicking outside of it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Re-enable scrolling
     }
 }
 
@@ -244,8 +246,9 @@ function showPokemonDetails(pokemon) {
     `;
     modalPokemonStats.appendChild(cpInfo);
 
-    // Show the modal
+    // Show the modal and disable scrolling
     modal.style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
 // Function to create a Pokemon card
@@ -290,9 +293,18 @@ function updatePokemonList(searchTerm = '') {
 
 // Get the search input and add event listener
 const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('input', (e) => {
-    updatePokemonList(e.target.value);
-});
 
-// Initial render
-updatePokemonList();
+// Load saved search value from localStorage and apply it
+const savedSearch = localStorage.getItem('pokemonSearch') || '';
+searchInput.value = savedSearch;
+if (savedSearch) {
+    updatePokemonList(savedSearch);
+}
+
+// Add event listener for search input
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    // Save search value to localStorage
+    localStorage.setItem('pokemonSearch', searchTerm);
+    updatePokemonList(searchTerm);
+});
