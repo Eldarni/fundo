@@ -290,18 +290,9 @@ function updatePokemonList(searchTerm = '') {
 
 // Get the search input and add event listener
 const searchInput = document.getElementById('searchInput');
-
-// Load saved search value from localStorage and apply it
-const savedSearch = localStorage.getItem('pokemonSearch') || '';
-searchInput.value = savedSearch;
-if (savedSearch) {
-    updatePokemonList(savedSearch);
-}
-
-// Add event listener for search input
 searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    // Save search value to localStorage
-    localStorage.setItem('pokemonSearch', searchTerm);
-    updatePokemonList(searchTerm);
+    updatePokemonList(e.target.value);
 });
+
+// Initial render
+updatePokemonList();
