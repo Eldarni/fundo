@@ -392,7 +392,7 @@
         "def": 211,
         "hit": 155,
         "number": 830,
-        "released": null,
+        "released": "2025-04-09",
         "shiny": null
     },
     {
@@ -410,7 +410,7 @@
         "def": 144,
         "hit": 172,
         "number": 841,
-        "released": null,
+        "released": "2025-04-24",
         "shiny": null
     },
     {
@@ -914,7 +914,7 @@
         "def": 104,
         "hit": 120,
         "number": 829,
-        "released": null,
+        "released": "2025-04-09",
         "shiny": null
     },
     {
@@ -1832,8 +1832,8 @@
         "def": 203,
         "hit": 225,
         "number": 983,
-        "released": null,
-        "shiny": null
+        "released": "2025-05-10",
+        "shiny": "2025-05-10"
     },
     {
         "name": "Koraidon",
@@ -2678,7 +2678,7 @@
         "def": 116,
         "hit": 120,
         "number": 840,
-        "released": null,
+        "released": "2025-04-24",
         "shiny": null
     },
     {
@@ -2687,7 +2687,7 @@
         "def": 146,
         "hit": 242,
         "number": 842,
-        "released": null,
+        "released": "2025-04-24",
         "shiny": null
     },
     {
@@ -4847,7 +4847,7 @@
         "def": 110,
         "hit": 137,
         "number": 957,
-        "released": null,
+        "released": "2025-04-16",
         "shiny": null
     },
     {
@@ -4901,7 +4901,7 @@
         "def": 145,
         "hit": 163,
         "number": 958,
-        "released": null,
+        "released": "2025-04-16",
         "shiny": null
     },
     {
@@ -5000,7 +5000,7 @@
         "def": 196,
         "hit": 198,
         "number": 959,
-        "released": null,
+        "released": "2025-04-16",
         "shiny": null
     },
     {
@@ -5900,7 +5900,7 @@
         "def": 177,
         "hit": 225,
         "number": 892,
-        "released": null,
+        "released": "2025-05-21",
         "shiny": null
     },
     {
@@ -8376,7 +8376,7 @@
         "hit": 137,
         "number": 703,
         "released": "2023-06-21",
-        "shiny": null
+        "shiny": "2025-05-29"
     },
     {
         "name": "Passimian",
@@ -8439,7 +8439,7 @@
         "hit": 163,
         "number": 996,
         "released": "2023-09-10",
-        "shiny": null
+        "shiny": "2025-05-29"
     },
     {
         "name": "Baxcalibur",
@@ -8448,7 +8448,7 @@
         "hit": 229,
         "number": 998,
         "released": "2023-09-10",
-        "shiny": null
+        "shiny": "2025-05-29"
     },
     {
         "name": "Pawmi",
@@ -8457,7 +8457,7 @@
         "hit": 128,
         "number": 921,
         "released": "2023-09-10",
-        "shiny": null
+        "shiny": "2025-05-11"
     },
     {
         "name": "Pawmo",
@@ -8466,7 +8466,7 @@
         "hit": 155,
         "number": 922,
         "released": "2023-09-10",
-        "shiny": null
+        "shiny": "2025-05-11"
     },
     {
         "name": "Pawmot",
@@ -8475,7 +8475,7 @@
         "hit": 172,
         "number": 923,
         "released": "2023-09-10",
-        "shiny": null
+        "shiny": "2025-05-11"
     },
     {
         "name": "Arctibax",
@@ -8484,7 +8484,7 @@
         "hit": 207,
         "number": 997,
         "released": "2023-09-10",
-        "shiny": null
+        "shiny": "2025-05-29"
     },
     {
         "name": "Greavard",
@@ -8592,7 +8592,7 @@
         "hit": 142,
         "number": 806,
         "released": "2024-05-23",
-        "shiny": null
+        "shiny": "2025-04-09"
     },
     {
         "name": "Naganadel",
@@ -8610,7 +8610,7 @@
         "hit": 156,
         "number": 805,
         "released": "2024-05-23",
-        "shiny": null
+        "shiny": "2025-04-09"
     },
     {
         "name": "Maushold",
@@ -9581,8 +9581,8 @@
         "def": 240,
         "hit": 192,
         "number": 888,
-        "released": "2025-03-29",
-        "shiny": null
+        "released": "2025-05-29",
+        "shiny": "2025-05-29"
     },
     {
         "name": "Zamazenta - Crowned Shield",
@@ -9590,8 +9590,8 @@
         "def": 292,
         "hit": 192,
         "number": 889,
-        "released": "2025-03-29",
-        "shiny": null
+        "released": "2025-05-29",
+        "shiny": "2025-05-29"
     },
     {
         "name": "Hisuian Zorua",
