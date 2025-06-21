@@ -1,0 +1,11 @@
+{
+  "version": "0.2",
+  "ignorePaths": [
+    "src/pokemon.json"
+  ],
+  "words": [
+    "Bulbapedia",
+    "fundo",
+    "hundo"
+  ]
+}
