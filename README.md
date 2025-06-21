@@ -23,7 +23,7 @@ npm run start
 
 Pokémon data from various sources
 Release Dates provided by [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_availability_(GO))
-Shiny Release dates provided by [Bulbapdia](https://bulbapedia.bulbagarden.net/wiki/List_of_Shiny_Pok%C3%A9mon_in_Pok%C3%A9mon_GO)
+Shiny Release dates provided by [Bulbapdia](https://bulbapedia.bulbagarden.net/wiki/List_of_Shiny_Pok%C3%A9mon_in_Pok%C3%A9mon_GO) and [Pokémon Go Wiki](https://pokemongo.fandom.com/wiki/List_of_Shiny_Pok%C3%A9mon_release_dates)
 Raid data is provided by [ScrapedDuck](https://github.com/bigfoott/ScrapedDuck)
 
 ## License
