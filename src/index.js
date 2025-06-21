@@ -337,23 +337,13 @@ function updatePokemonList(searchTerm = '') {
 // Get the search input and add event listener
 const searchInput = document.getElementById('searchInput');
 
-// Load saved search value from localStorage and apply it
-const savedSearch = localStorage.getItem('pokemonSearch') || '';
-searchInput.value = savedSearch;
-
 // Fetch raid data and update display
 fetchRaidData().then(() => {
-    if (!savedSearch) {
-        updatePokemonList(); // Show raid bosses by default if no saved search
-    } else {
-        updatePokemonList(savedSearch);
-    }
+    updatePokemonList();
 });
 
 // Add event listener for search input
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    // Save search value to localStorage
-    localStorage.setItem('pokemonSearch', searchTerm);
     updatePokemonList(searchTerm);
 });
