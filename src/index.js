@@ -247,7 +247,7 @@ function showPokemonDetails(pokemon) {
         <div class="stat cp-levels">
             <div style="color: var(--pokedex-light)" class="stat-value" data-tooltip="CP range from 10/10/10 to 15/15/15 IVs">CP RANGES:</div>
             <div style="color: var(--pokedex-light)">L15: ${calculateCP(pokemon, 10, 10, 10, 15)} - ${calculateCP(pokemon, 15, 15, 15, 15)}</div>
-            <div style="color: var(--pokedex-light)">L20: ${calculateCP(pokemon, 10, 10, 10, 20)} - ${calculateCP(pokemon, 15, 15, 15, 20)}</div>
+            <div style="color: var(--pokedex-screen)">L20: ${calculateCP(pokemon, 10, 10, 10, 20)} - ${calculateCP(pokemon, 15, 15, 15, 20)}</div>
             <div style="color: var(--pokedex-light)">L25: ${calculateCP(pokemon, 10, 10, 10, 25)} - ${calculateCP(pokemon, 15, 15, 15, 25)}</div>
             <div style="color: var(--pokedex-light)">L30: ${calculateCP(pokemon, 10, 10, 10, 30)} - ${calculateCP(pokemon, 15, 15, 15, 30)}</div>
             <div style="color: var(--pokedex-light)">L35: ${calculateCP(pokemon, 10, 10, 10, 35)} - ${calculateCP(pokemon, 15, 15, 15, 35)}</div>
