@@ -374,7 +374,7 @@
         "def": 206,
         "hit": 153,
         "number": 680,
-        "released": null,
+        "released": "2025-07-22",
         "shiny": null
     },
     {
@@ -599,7 +599,7 @@
         "def": 192,
         "hit": 268,
         "number": 890,
-        "released": null,
+        "released": "2025-08-18",
         "shiny": null
     },
     {
@@ -905,7 +905,7 @@
         "def": 139,
         "hit": 128,
         "number": 679,
-        "released": null,
+        "released": "2025-07-22",
         "shiny": null
     },
     {
@@ -4082,7 +4082,7 @@
         "def": 166,
         "hit": 169,
         "number": 978,
-        "released": null,
+        "released": "2025-07-15",
         "shiny": null
     },
     {
@@ -4820,7 +4820,7 @@
         "def": 149,
         "hit": 120,
         "number": 948,
-        "released": null,
+        "released": "2025-07-29",
         "shiny": null
     },
     {
@@ -4829,7 +4829,7 @@
         "def": 209,
         "hit": 190,
         "number": 949,
-        "released": null,
+        "released": "2025-07-29",
         "shiny": null
     },
     {
@@ -5846,7 +5846,7 @@
         "def": 97,
         "hit": 155,
         "number": 681,
-        "released": null,
+        "released": "2025-07-22",
         "shiny": null
     },
     {
@@ -5855,7 +5855,7 @@
         "def": 291,
         "hit": 155,
         "number": 681,
-        "released": null,
+        "released": "2025-07-22",
         "shiny": null
     },
     {
@@ -8349,7 +8349,7 @@
         "hit": 202,
         "number": 1000,
         "released": "2023-02-27",
-        "shiny": null
+        "shiny": "2025-07-01"
     },
     {
         "name": "Gimmighoul",
@@ -8358,7 +8358,7 @@
         "hit": 128,
         "number": 999,
         "released": "2023-02-27",
-        "shiny": null
+        "shiny": "2025-07-01"
     },
     {
         "name": "Hawlucha",
@@ -8412,7 +8412,7 @@
         "hit": 198,
         "number": 914,
         "released": "2023-09-05",
-        "shiny": null
+        "shiny": "2025-07-20"
     },
     {
         "name": "Quaxly",
@@ -8421,7 +8421,7 @@
         "hit": 146,
         "number": 912,
         "released": "2023-09-05",
-        "shiny": null
+        "shiny": "2025-07-20"
     },
     {
         "name": "Quaxwell",
@@ -8430,7 +8430,7 @@
         "hit": 172,
         "number": 913,
         "released": "2023-09-05",
-        "shiny": null
+        "shiny": "2025-07-20"
     },
     {
         "name": "Frigibax",
@@ -8574,7 +8574,7 @@
         "hit": 67,
         "number": 960,
         "released": "2024-04-22",
-        "shiny": null
+        "shiny": "2025-07-29"
     },
     {
         "name": "Wugtrio",
@@ -8583,7 +8583,7 @@
         "hit": 111,
         "number": 961,
         "released": "2024-04-22",
-        "shiny": null
+        "shiny": "2025-07-29"
     },
     {
         "name": "Blacephalon",
@@ -8844,7 +8844,7 @@
         "hit": 116,
         "number": 821,
         "released": "2025-01-21",
-        "shiny": null
+        "shiny": "2025-07-22"
     },
     {
         "name": "Corviknight",
@@ -8853,7 +8853,7 @@
         "hit": 221,
         "number": 823,
         "released": "2025-01-21",
-        "shiny": null
+        "shiny": "2025-07-22"
     },
     {
         "name": "Corvisquire",
@@ -8862,7 +8862,7 @@
         "hit": 169,
         "number": 822,
         "released": "2025-01-21",
-        "shiny": null
+        "shiny": "2025-07-22"
     },
     {
         "name": "Dhelmise",
@@ -9599,7 +9599,7 @@
         "def": 79,
         "hit": 111,
         "number": 570,
-        "released": null,
+        "released": "2025-07-08",
         "shiny": null
     },
     {
@@ -9608,7 +9608,7 @@
         "def": 128,
         "hit": 146,
         "number": 571,
-        "released": null,
+        "released": "2025-07-08",
         "shiny": null
     },
     {
@@ -9680,8 +9680,8 @@
         "def": 159,
         "hit": 172,
         "number": 549,
-        "released": null,
-        "shiny": null
+        "released": "2025-07-12",
+        "shiny": "2025-07-12"
     },
     {
         "name": "Meloetta (Pirouette Forme)",
