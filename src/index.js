@@ -107,7 +107,7 @@ const CP_MULTIPLIERS = {
 };
 
 //
-const today = (new Date()).setHours(0, 0, 0);
+const today = new Date((new Date()).setHours(0, 0, 0, 0));
 
 // Sort the pokemon array by number
 const sortedPokemon = pokemonData.sort((a, b) => a.number - b.number);
@@ -207,19 +207,34 @@ function showPokemonDetails(pokemon) {
     if (hp51.same) fundoLevels.push('L51');
 
     // Format release date
-    const releaseDate = pokemon.released ? new Date(pokemon.released) : null;
-    const releaseInfo = releaseDate
-        ? `RELEASED: ${releaseDate.toLocaleDateString()}
-           <span class="days-ago">${Math.floor((new Date() - releaseDate) / (1000 * 60 * 60 * 24)).toLocaleString('en-GB')} days ago</span>`
-        : 'RELEASED: Not Released';
+    const releaseDate = pokemon.released ? new Date((new Date(pokemon.released)).setHours(0, 0, 0, 0)) : null;
+    const releaseInfo = (() => {
+        const days = releaseDate ? Math.floor((today - releaseDate) / (1000 * 60 * 60 * 24)) : -1;
+        switch (true) {
+            case (days > 0):
+                return `RELEASED: ${new Date(releaseDate).toLocaleDateString()} <span class="days-ago">${(days).toLocaleString('en-GB')} ${((days > 1) ? 'days' : 'day')} ago</span>`;
+            case (days == 0):
+                return `RELEASED: ${releaseDate.toLocaleDateString()} <span class="days-ago">TODAY!!!</span>`;
+            case (days < 0):
+                return `RELEASED: Not Released`;
+        }
+    })();
 
     // Format shiny release date
-    const shinyDate = pokemon.shiny ? new Date(pokemon.shiny) : null;
-    const shinyInfo = (pokemon.shiny && new Date(pokemon.shiny) <= today)
-        ? `SHINY RELEASED: ${shinyDate.toLocaleDateString()}
-           <span class="days-ago">${Math.floor((new Date() - shinyDate) / (1000 * 60 * 60 * 24)).toLocaleString('en-GB')} days ago</span>`
-        : 'SHINY RELEASED: Not Released';
+    const shinyDate = pokemon.shiny ? new Date((new Date(pokemon.shiny)).setHours(0, 0, 0, 0)) : null;
+    const shinyInfo = (() => {
+        const days = shinyDate ? Math.floor((today - shinyDate) / (1000 * 60 * 60 * 24)) : -1;
+        switch (true) {
+            case (days > 0):
+                return `SHINY RELEASED: ${new Date(shinyDate).toLocaleDateString()} <span class="days-ago">${(days).toLocaleString('en-GB')} ${((days > 1) ? 'days' : 'day')} ago</span>`;
+            case (days == 0):
+                return `SHINY RELEASED: ${shinyDate.toLocaleDateString()} <span class="days-ago">TODAY!!!</span>`;
+            case (days < 0):
+                return `SHINY RELEASED: Not Released`;
+        }
+    })();
 
+    //
     cpInfo.innerHTML = `
         <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
         <div class="base-stats">
