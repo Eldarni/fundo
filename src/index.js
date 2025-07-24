@@ -106,6 +106,9 @@ const CP_MULTIPLIERS = {
     51: 0.84530001
 };
 
+//
+const today = (new Date()).setHours(0, 0, 0);
+
 // Sort the pokemon array by number
 const sortedPokemon = pokemonData.sort((a, b) => a.number - b.number);
 
@@ -212,7 +215,7 @@ function showPokemonDetails(pokemon) {
 
     // Format shiny release date
     const shinyDate = pokemon.shiny ? new Date(pokemon.shiny) : null;
-    const shinyInfo = shinyDate
+    const shinyInfo = (pokemon.shiny && new Date(pokemon.shiny) <= today)
         ? `SHINY RELEASED: ${shinyDate.toLocaleDateString()}
            <span class="days-ago">${Math.floor((new Date() - shinyDate) / (1000 * 60 * 60 * 24)).toLocaleString('en-GB')} days ago</span>`
         : 'SHINY RELEASED: Not Released';
@@ -254,10 +257,11 @@ function showPokemonDetails(pokemon) {
 // Function to create a Pokemon card
 function createPokemonCard(pokemon) {
     const card = document.createElement('div');
+    const isShiny = pokemon.shiny && new Date(pokemon.shiny) <= today;
     card.className = 'pokemon-card';
     card.innerHTML = `
         <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
-        ${pokemon.shiny ? '<div class="shiny-indicator">✨</div>' : ''}
+        ${isShiny ? '<div class="shiny-indicator">✨</div>' : ''}
         <img class="pokemon-sprite" src="sprites/${pokemon.number}.png" alt="${pokemon.name}">
         <div class="pokemon-name">${pokemon.name}</div>
     `;
