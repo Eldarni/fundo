@@ -350,15 +350,8 @@ footer {
         padding: 15px;
     }
 
-    .modal-header {
-        flex-direction: row;
-        align-items: center;
-        gap: 0;
-    }
-
     .modal-header h2 {
         font-size: 1.2em;
-        padding-right: 30px; /* Make room for the close button */
     }
 
     .close {
