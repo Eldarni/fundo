@@ -244,14 +244,6 @@ function showPokemonDetails(pokemon) {
 
     //
     cpInfo.innerHTML = `
-        <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
-        <div class="base-stats">
-            <span class="stat-value" data-tooltip="Attack">${pokemon.atk}</span>
-            <span>•</span>
-            <span class="stat-value" data-tooltip="Defense">${pokemon.def}</span>
-            <span>•</span>
-            <span class="stat-value" data-tooltip="HP">${pokemon.hit}</span>
-        </div>
         <div class="stat cp-levels">
             <div style="color: var(--pokedex-light)" class="stat-value" data-tooltip="CP range from 10/10/10 to 15/15/15 IVs">CP RANGES:</div>
             <div style="color: var(--pokedex-light)">L15: ${calculateCP(pokemon, 10, 10, 10, 15)} - ${calculateCP(pokemon, 15, 15, 15, 15)}</div>
@@ -268,6 +260,13 @@ function showPokemonDetails(pokemon) {
         </div>
         <div class="stat">
             ${shinyInfo}
+        </div>
+        <div class="base-stats">
+            <span class="stat-value" data-tooltip="Attack">${pokemon.atk}</span>
+            <span>•</span>
+            <span class="stat-value" data-tooltip="Defense">${pokemon.def}</span>
+            <span>•</span>
+            <span class="stat-value" data-tooltip="HP">${pokemon.hit}</span>
         </div>
     `;
     modalPokemonStats.appendChild(cpInfo);
