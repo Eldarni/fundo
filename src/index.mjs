@@ -164,7 +164,9 @@ function hasSameHPAtLevel(pokemon, level) {
 
 // Get modal elements
 const modal = document.getElementById('pokemonModal');
+const modalPokemonNumber = document.getElementById('modalPokemonNumber');
 const modalPokemonName = document.getElementById('modalPokemonName');
+const modalPokemonTier = document.getElementById('modalPokemonTier');
 const modalPokemonSprite = document.getElementById('modalPokemonSprite');
 const modalPokemonStats = document.getElementById('modalPokemonStats');
 const closeModal = document.getElementsByClassName('close')[0];
@@ -185,7 +187,13 @@ window.onclick = function(event) {
 
 // Function to show modal with Pokémon details
 function showPokemonDetails(pokemon) {
+
+    //
+    modalPokemonNumber.textContent = `#${pokemon.number.toString().padStart(3, '0')}`;
     modalPokemonName.textContent = pokemon.name;
+    modalPokemonTier.innerHTML = `<div class="tier-stars" data-tier="${pokemon.tier}">${Array.from({length: pokemon.tier || 0}, (_, i) => `<span class="star">★</span>`).join('')}</div>`;
+
+    //
     modalPokemonSprite.src = `sprites/${pokemon.number}.png`;
     modalPokemonSprite.alt = pokemon.name;
 
@@ -277,6 +285,7 @@ function createPokemonCard(pokemon) {
     card.innerHTML = `
         <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
         ${isShiny ? '<div class="shiny-indicator">✨</div>' : ''}
+        <div class="tier-stars" data-tier="${pokemon.tier}">${Array.from({length: pokemon.tier || 0}, (_, i) => `<span class="star">★</span>`).join('')}</div>
         <img class="pokemon-sprite" src="sprites/${pokemon.number}.png" alt="${pokemon.name}">
         <div class="pokemon-name">${pokemon.name}</div>
     `;
@@ -325,7 +334,10 @@ async function fetchRaidData() {
 // Function to get current raid bosses
 function getCurrentRaidBosses() {
     const raidData = JSON.parse(localStorage.getItem('raidData') || '[]');
-    return raidData.map(raid => raid.name);
+    return raidData.reduce((a, c) => {
+        a[c.name] = ({'Tier 1' : 1, 'Tier 3' : 3, 'Tier 5' : 5 })?.[c.tier] ?? '';
+        return a;
+    }, {});
 }
 
 // Function to update the Pokemon list based on search
@@ -337,10 +349,24 @@ function updatePokemonList(searchTerm = '') {
 
     // If no search term and we have raid data, show raid bosses
     if (!searchTerm && localStorage.getItem('raidData')) {
+
+        //
         const raidBosses = getCurrentRaidBosses();
+
+        //
         filteredPokemon = sortedPokemon.filter(pokemon =>
-            raidBosses.includes(pokemon.name)
+            Object.keys(raidBosses).includes(pokemon.name)
         );
+
+        //
+        filteredPokemon = filteredPokemon.map(pokemon => {
+            pokemon.tier = raidBosses[pokemon.name];
+            return pokemon;
+        });
+
+        //
+        filteredPokemon = filteredPokemon.sort((a, b) => b.tier - a.tier);
+
     } else {
         filteredPokemon = sortedPokemon.filter(pokemon =>
             fuzzySearch(searchTerm, pokemon)
