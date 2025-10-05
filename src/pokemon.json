@@ -455,8 +455,8 @@
         "def": 185,
         "hit": 172,
         "number": 884,
-        "released": null,
-        "shiny": null
+        "released": "2025-09-30",
+        "shiny": "2025-09-30"
     },
     {
         "name": "Flittle",
@@ -518,8 +518,8 @@
         "def": 178,
         "hit": 312,
         "number": 977,
-        "released": null,
-        "shiny": null
+        "released": "2025-08-25",
+        "shiny": "2025-08-25"
     },
     {
         "name": "Farigiraf",
@@ -536,8 +536,8 @@
         "def": 150,
         "hit": 268,
         "number": 982,
-        "released": null,
-        "shiny": null
+        "released": "2025-09-23",
+        "shiny": "2025-09-23"
     },
     {
         "name": "Flutter Mane",
@@ -554,7 +554,7 @@
         "def": 184,
         "hit": 190,
         "number": 1011,
-        "released": null,
+        "released": "2025-10-10",
         "shiny": null
     },
     {
@@ -599,7 +599,7 @@
         "def": 192,
         "hit": 268,
         "number": 890,
-        "released": "2025-08-18",
+        "released": "2025-08-17",
         "shiny": null
     },
     {
@@ -932,7 +932,7 @@
         "def": 69,
         "hit": 128,
         "number": 859,
-        "released": null,
+        "released": "2025-11-07",
         "shiny": null
     },
     {
@@ -950,7 +950,7 @@
         "def": 139,
         "hit": 216,
         "number": 861,
-        "released": null,
+        "released": "2025-11-07",
         "shiny": null
     },
     {
@@ -968,7 +968,7 @@
         "def": 155,
         "hit": 172,
         "number": 873,
-        "released": null,
+        "released": "2025-08-06",
         "shiny": null
     },
     {
@@ -1310,7 +1310,7 @@
         "def": 186,
         "hit": 235,
         "number": 1019,
-        "released": null,
+        "released": "2025-10-10",
         "shiny": null
     },
     {
@@ -1652,7 +1652,7 @@
         "def": 102,
         "hit": 163,
         "number": 860,
-        "released": null,
+        "released": "2025-11-07",
         "shiny": null
     },
     {
@@ -3902,7 +3902,7 @@
         "def": 59,
         "hit": 102,
         "number": 872,
-        "released": null,
+        "released": "2025-08-06",
         "shiny": null
     },
     {
@@ -7890,7 +7890,7 @@
         "hit": 134,
         "number": 757,
         "released": "2022-04-03",
-        "shiny": null
+        "shiny": "2025-08-11"
     },
     {
         "name": "Salazzle",
@@ -7899,7 +7899,7 @@
         "hit": 169,
         "number": 758,
         "released": "2022-04-03",
-        "shiny": null
+        "shiny": "2025-08-11"
     },
     {
         "name": "Articuno",
@@ -8619,7 +8619,7 @@
         "hit": 179,
         "number": 925,
         "released": "2024-07-17",
-        "shiny": null
+        "shiny": "2025-08-06"
     },
     {
         "name": "Tandemaus",
@@ -8628,7 +8628,7 @@
         "hit": 137,
         "number": 924,
         "released": "2024-07-17",
-        "shiny": null
+        "shiny": "2025-08-06"
     },
     {
         "name": "Dragapult",
@@ -9495,15 +9495,6 @@
         "shiny": null
     },
     {
-        "name": "Eternamax Eternatus",
-        "atk": 251,
-        "def": 505,
-        "hit": 452,
-        "number": 890,
-        "released": null,
-        "shiny": null
-    },
-    {
         "name": "Basculegion (Female)",
         "atk": 199,
         "def": 144,
@@ -9662,8 +9653,8 @@
         "def": 184,
         "hit": 172,
         "number": 876,
-        "released": null,
-        "shiny": null
+        "released": "2025-09-16",
+        "shiny": "2025-09-16"
     },
     {
         "name": "Indeedee (Male)",
@@ -9671,8 +9662,8 @@
         "def": 166,
         "hit": 155,
         "number": 876,
-        "released": null,
-        "shiny": null
+        "released": "2025-09-16",
+        "shiny": "2025-09-16"
     },
     {
         "name": "Hisuian Lilligant",
