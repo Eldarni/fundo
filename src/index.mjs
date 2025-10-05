@@ -191,7 +191,7 @@ function showPokemonDetails(pokemon) {
     //
     modalPokemonNumber.textContent = `#${pokemon.number.toString().padStart(3, '0')}`;
     modalPokemonName.textContent = pokemon.name;
-    modalPokemonTier.innerHTML = `<div class="tier-stars" data-tier="${pokemon.tier}">${Array.from({length: pokemon.tier || 0}, (_, i) => `<span class="star">★</span>`).join('')}</div>`;
+    modalPokemonTier.innerHTML = ((parseInt(pokemon.tier, 10) > 0) ? Array.from({length: pokemon.tier || 0}, (_, i) => `<span class="star">★</span>`).join('') : ((pokemon.tier === 'Mega') ? `<svg style="width: 32px; height: 32px;"><use href="#mega-icon" /></svg>` : ''));
 
     //
     modalPokemonSprite.src = `sprites/${pokemon.number}.png`;
@@ -278,13 +278,22 @@ function showPokemonDetails(pokemon) {
 
 // Function to create a Pokemon card
 function createPokemonCard(pokemon) {
+
+    //
     const card = document.createElement('div');
+
+    //
     const isShiny = pokemon.shiny && new Date(pokemon.shiny) <= today;
+
+    //
+    const tier = ((parseInt(pokemon.tier, 10) > 0) ? Array.from({length: pokemon.tier || 0}, (_, i) => `<span class="star">★</span>`).join('') : ((pokemon.tier === 'Mega') ? `<svg><use href="#mega-icon" /></svg>` : ''));
+
+    //
     card.className = 'pokemon-card';
     card.innerHTML = `
         <div class="pokedex-number">#${pokemon.number.toString().padStart(3, '0')}</div>
         ${isShiny ? '<div class="shiny-indicator">✨</div>' : ''}
-        <div class="tier-stars" data-tier="${pokemon.tier}">${Array.from({length: pokemon.tier || 0}, (_, i) => `<span class="star">★</span>`).join('')}</div>
+        <div class="tier-stars" data-tier="${pokemon.tier}">${tier}</div>
         <img class="pokemon-sprite" src="sprites/${pokemon.number}.png" alt="${pokemon.name}">
         <div class="pokemon-name">${pokemon.name}</div>
     `;
@@ -334,7 +343,7 @@ async function fetchRaidData() {
 function getCurrentRaidBosses() {
     const raidData = JSON.parse(localStorage.getItem('raidData') || '[]');
     return raidData.reduce((a, c) => {
-        a[c.name] = ({'Tier 1' : 1, 'Tier 3' : 3, 'Tier 5' : 5 })?.[c.tier] ?? '';
+        a[c.name.replace('Mega ', '')] = ({'Tier 1' : 1, 'Tier 3' : 3, 'Tier 5' : 5, 'Mega' : 'Mega' })?.[c.tier] ?? '';
         return a;
     }, {});
 }

@@ -169,6 +169,11 @@ footer {
     gap: 5px;
 }
 
+.tier-stars svg {
+    width: 1em;
+    height: 1em;
+}
+
 .tier-stars .star {
     display: inline-block;
     transition: transform 0.2s ease;
