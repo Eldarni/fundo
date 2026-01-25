@@ -500,7 +500,7 @@
         "def": 145,
         "hit": 193,
         "number": 973,
-        "released": null,
+        "released": "2026-02-03",
         "shiny": null
     },
     {
@@ -923,7 +923,7 @@
         "def": 162,
         "hit": 190,
         "number": 853,
-        "released": null,
+        "released": "2025-12-13",
         "shiny": null
     },
     {
@@ -933,7 +933,7 @@
         "hit": 128,
         "number": 859,
         "released": "2025-11-07",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Cacnea",
@@ -951,7 +951,7 @@
         "hit": 216,
         "number": 861,
         "released": "2025-11-07",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Cacturne",
@@ -986,7 +986,7 @@
         "def": 212,
         "hit": 225,
         "number": 934,
-        "released": null,
+        "released": "2025-12-02",
         "shiny": null
     },
     {
@@ -995,7 +995,7 @@
         "def": 104,
         "hit": 134,
         "number": 969,
-        "released": null,
+        "released": "2026-01-27",
         "shiny": null
     },
     {
@@ -1202,7 +1202,7 @@
         "def": 177,
         "hit": 195,
         "number": 970,
-        "released": null,
+        "released": "2026-01-27",
         "shiny": null
     },
     {
@@ -1653,7 +1653,7 @@
         "hit": 163,
         "number": 860,
         "released": "2025-11-07",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Hoothoot",
@@ -1787,7 +1787,7 @@
         "def": 132,
         "hit": 172,
         "number": 941,
-        "released": null,
+        "released": "2026-01-14",
         "shiny": null
     },
     {
@@ -1823,7 +1823,7 @@
         "def": 185,
         "hit": 172,
         "number": 950,
-        "released": null,
+        "released": "2026-01-06",
         "shiny": null
     },
     {
@@ -2732,7 +2732,7 @@
         "def": 108,
         "hit": 146,
         "number": 932,
-        "released": null,
+        "released": "2025-12-02",
         "shiny": null
     },
     {
@@ -2741,7 +2741,7 @@
         "def": 160,
         "hit": 155,
         "number": 933,
-        "released": null,
+        "released": "2025-12-02",
         "shiny": null
     },
     {
@@ -3110,7 +3110,7 @@
         "def": 91,
         "hit": 102,
         "number": 837,
-        "released": null,
+        "released": "2025-12-24",
         "shiny": null
     },
     {
@@ -3452,7 +3452,7 @@
         "def": null,
         "hit": null,
         "number": 1012,
-        "released": null,
+        "released": "2025-10-21",
         "shiny": null
     },
     {
@@ -4046,7 +4046,7 @@
         "def": 77,
         "hit": 111,
         "number": 917,
-        "released": null,
+        "released": "2025-11-04",
         "shiny": null
     },
     {
@@ -4055,7 +4055,7 @@
         "def": 166,
         "hit": 155,
         "number": 918,
-        "released": null,
+        "released": "2025-11-04",
         "shiny": null
     },
     {
@@ -4109,7 +4109,7 @@
         "def": null,
         "hit": null,
         "number": 1013,
-        "released": null,
+        "released": "2025-10-21",
         "shiny": null
     },
     {
@@ -4793,7 +4793,7 @@
         "def": 157,
         "hit": 190,
         "number": 838,
-        "released": null,
+        "released": "2025-12-24",
         "shiny": null
     },
     {
@@ -4848,7 +4848,7 @@
         "hit": 137,
         "number": 957,
         "released": "2025-04-16",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Lapras",
@@ -4902,7 +4902,7 @@
         "hit": 163,
         "number": 958,
         "released": "2025-04-16",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Sceptile",
@@ -5001,7 +5001,7 @@
         "hit": 198,
         "number": 959,
         "released": "2025-04-16",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Brute Bonnet",
@@ -5936,7 +5936,7 @@
         "def": 75,
         "hit": 120,
         "number": 940,
-        "released": null,
+        "released": "2026-01-14",
         "shiny": null
     },
     {
@@ -6278,7 +6278,7 @@
         "def": 198,
         "hit": 242,
         "number": 839,
-        "released": null,
+        "released": "2025-12-24",
         "shiny": null
     },
     {
@@ -6287,7 +6287,7 @@
         "def": 103,
         "hit": 137,
         "number": 852,
-        "released": null,
+        "released": "2025-12-13",
         "shiny": null
     },
     {
@@ -7854,7 +7854,7 @@
         "hit": 111,
         "number": 731,
         "released": "2022-03-01",
-        "shiny": null
+        "shiny": "2025-11-30"
     },
     {
         "name": "Toucannon",
@@ -7863,7 +7863,7 @@
         "hit": 190,
         "number": 733,
         "released": "2022-03-01",
-        "shiny": null
+        "shiny": "2025-11-30"
     },
     {
         "name": "Trumbeak",
@@ -7872,7 +7872,7 @@
         "hit": 146,
         "number": 732,
         "released": "2022-03-01",
-        "shiny": null
+        "shiny": "2025-11-30"
     },
     {
         "name": "Comfey",
@@ -8340,7 +8340,7 @@
         "hit": 209,
         "number": 647,
         "released": "2022-12-10",
-        "shiny": null
+        "shiny": "2025-11-25"
     },
     {
         "name": "Gholdengo",
@@ -8511,7 +8511,7 @@
         "hit": 156,
         "number": 938,
         "released": "2023-11-07",
-        "shiny": null
+        "shiny": "2026-01-13"
     },
     {
         "name": "Bellibolt",
@@ -8520,7 +8520,7 @@
         "hit": 240,
         "number": 939,
         "released": "2023-11-07",
-        "shiny": null
+        "shiny": "2026-01-13"
     },
     {
         "name": "Wyrdeer",
@@ -8673,7 +8673,7 @@
         "hit": 137,
         "number": 810,
         "released": "2024-09-03",
-        "shiny": null
+        "shiny": "2026-01-18"
     },
     {
         "name": "Inteleon",
@@ -8700,7 +8700,7 @@
         "hit": 225,
         "number": 812,
         "released": "2024-09-03",
-        "shiny": null
+        "shiny": "2026-01-18"
     },
     {
         "name": "Scorbunny",
@@ -8736,7 +8736,7 @@
         "hit": 172,
         "number": 811,
         "released": "2024-09-03",
-        "shiny": null
+        "shiny": "2026-01-18"
     },
     {
         "name": "Cinderace",
@@ -8754,7 +8754,7 @@
         "hit": 123,
         "number": 856,
         "released": "2024-09-18",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Hatterene",
@@ -8763,7 +8763,7 @@
         "hit": 149,
         "number": 858,
         "released": "2024-09-18",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Hattrem",
@@ -8772,7 +8772,7 @@
         "hit": 149,
         "number": 857,
         "released": "2024-09-18",
-        "shiny": null
+        "shiny": "2025-11-07"
     },
     {
         "name": "Morpeko",
@@ -8781,7 +8781,7 @@
         "hit": 151,
         "number": 877,
         "released": "2024-10-22",
-        "shiny": null
+        "shiny": "2025-11-18"
     },
     {
         "name": "Polteageist",
@@ -8790,7 +8790,7 @@
         "hit": 155,
         "number": 855,
         "released": "2024-12-03",
-        "shiny": null
+        "shiny": "2025-10-21"
     },
     {
         "name": "Sinistea",
@@ -8799,7 +8799,7 @@
         "hit": 120,
         "number": 854,
         "released": "2024-12-03",
-        "shiny": null
+        "shiny": "2025-10-21"
     },
     {
         "name": "Dachsbun",
@@ -8808,7 +8808,7 @@
         "hit": 149,
         "number": 927,
         "released": "2025-01-03",
-        "shiny": null
+        "shiny": "2026-01-20"
     },
     {
         "name": "Fidough",
@@ -8817,7 +8817,7 @@
         "hit": 114,
         "number": 926,
         "released": "2025-01-03",
-        "shiny": null
+        "shiny": "2026-01-20"
     },
     {
         "name": "Grafaiai",
@@ -8871,7 +8871,7 @@
         "hit": 172,
         "number": 781,
         "released": "2025-02-11",
-        "shiny": null
+        "shiny": "2026-01-06"
     },
     {
         "name": "Kubfu",
