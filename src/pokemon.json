@@ -419,7 +419,7 @@
         "def": 163,
         "hit": 172,
         "number": 845,
-        "released": null,
+        "released": "2026-08-18",
         "shiny": null
     },
     {
@@ -969,7 +969,7 @@
         "hit": 172,
         "number": 873,
         "released": "2025-08-06",
-        "shiny": null
+        "shiny": "2026-08-04"
     },
     {
         "name": "Glastrier",
@@ -2696,7 +2696,7 @@
         "def": 72,
         "hit": 121,
         "number": 846,
-        "released": null,
+        "released": "2026-08-18",
         "shiny": null
     },
     {
@@ -2705,7 +2705,7 @@
         "def": 127,
         "hit": 156,
         "number": 847,
-        "released": null,
+        "released": "2026-08-18",
         "shiny": null
     },
     {
@@ -3903,7 +3903,7 @@
         "hit": 102,
         "number": 872,
         "released": "2025-08-06",
-        "shiny": null
+        "shiny": "2026-08-04"
     },
     {
         "name": "Spectrier",
@@ -4064,7 +4064,7 @@
         "def": 105,
         "hit": 193,
         "number": 931,
-        "released": null,
+        "released": "2026-06-23",
         "shiny": null
     },
     {
@@ -8322,7 +8322,7 @@
         "hit": 263,
         "number": 792,
         "released": "2022-11-23",
-        "shiny": null
+        "shiny": "2026-08-19"
     },
     {
         "name": "Solgaleo",
@@ -8331,7 +8331,7 @@
         "hit": 263,
         "number": 791,
         "released": "2022-11-23",
-        "shiny": null
+        "shiny": "2026-07-22"
     },
     {
         "name": "Keldeo",
@@ -8664,7 +8664,7 @@
         "hit": 163,
         "number": 817,
         "released": "2024-09-03",
-        "shiny": null
+        "shiny": "2026-07-04"
     },
     {
         "name": "Grookey",
@@ -8682,7 +8682,7 @@
         "hit": 172,
         "number": 818,
         "released": "2024-09-03",
-        "shiny": null
+        "shiny": "2026-07-04"
     },
     {
         "name": "Raboot",
@@ -8718,7 +8718,7 @@
         "hit": 137,
         "number": 816,
         "released": "2024-09-03",
-        "shiny": null
+        "shiny": "2026-07-04"
     },
     {
         "name": "Stonjourner",
@@ -8889,7 +8889,7 @@
         "hit": 120,
         "number": 827,
         "released": "2025-03-19",
-        "shiny": null
+        "shiny": "2026-08-16"
     },
     {
         "name": "Thievul",
@@ -8898,7 +8898,7 @@
         "hit": 172,
         "number": 828,
         "released": "2025-03-19",
-        "shiny": null
+        "shiny": "2026-08-16"
     },
     {
         "name": "Sizzlipede",
