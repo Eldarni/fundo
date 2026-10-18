@@ -574,7 +574,7 @@
             "grass"
         ],
         "released": "2025-04-24",
-        "shiny": null
+        "shiny": "2026-09-29"
     },
     {
         "name": "Cramorant",
@@ -700,7 +700,7 @@
             "flying"
         ],
         "released": "2026-02-03",
-        "shiny": null
+        "shiny": "2026-09-08"
     },
     {
         "name": "Snorunt",
@@ -775,7 +775,7 @@
             "grass"
         ],
         "released": "2025-10-10",
-        "shiny": null
+        "shiny": "2026-09-29"
     },
     {
         "name": "Fezandipiti",
@@ -1831,7 +1831,7 @@
             "grass"
         ],
         "released": "2025-10-10",
-        "shiny": null
+        "shiny": "2026-09-29"
     },
     {
         "name": "Gouging Fire",
@@ -2519,7 +2519,7 @@
         "type": [
             "dark"
         ],
-        "released": null,
+        "released": "2026-09-08",
         "shiny": null
     },
     {
@@ -2531,7 +2531,7 @@
         "type": [
             "dark"
         ],
-        "released": null,
+        "released": "2026-09-08",
         "shiny": null
     },
     {
@@ -3743,7 +3743,7 @@
             "grass"
         ],
         "released": "2025-04-24",
-        "shiny": null
+        "shiny": "2026-09-29"
     },
     {
         "name": "Appletun",
@@ -3756,7 +3756,7 @@
             "grass"
         ],
         "released": "2025-04-24",
-        "shiny": null
+        "shiny": "2026-09-29"
     },
     {
         "name": "Arrokuda",
@@ -6677,7 +6677,7 @@
             "ghost",
             "grass"
         ],
-        "released": null,
+        "released": "2026-10-19",
         "shiny": null
     },
     {
@@ -8259,7 +8259,7 @@
             "ghost",
             "grass"
         ],
-        "released": null,
+        "released": "2026-10-13",
         "shiny": null
     },
     {
@@ -11808,7 +11808,7 @@
             "ghost"
         ],
         "released": "2023-10-19",
-        "shiny": null
+        "shiny": "2026-11-01"
     },
     {
         "name": "Houndstone",
@@ -11820,7 +11820,7 @@
             "ghost"
         ],
         "released": "2023-10-19",
-        "shiny": null
+        "shiny": "2026-11-01"
     },
     {
         "name": "Tadbulb",
@@ -12265,7 +12265,7 @@
             "poison"
         ],
         "released": "2025-01-15",
-        "shiny": null
+        "shiny": "2026-10-02"
     },
     {
         "name": "Shroodle",
@@ -12278,7 +12278,7 @@
             "poison"
         ],
         "released": "2025-01-15",
-        "shiny": null
+        "shiny": "2026-10-02"
     },
     {
         "name": "Rookidee",
@@ -13388,7 +13388,7 @@
           "rock",
           "flying"
         ],
-        "released": null,
+        "released": "2026-10-13",
         "shiny": null
     },
     {
@@ -13401,7 +13401,7 @@
           "rock",
           "flying"
         ],
-        "released": null,
+        "released": "2026-10-13",
         "shiny": null
     },
     {
@@ -13479,8 +13479,8 @@
           "steel",
           "dragon"
         ],
-        "released": null,
-        "shiny": null
+        "released": "2026-11-06",
+        "shiny": "2026-11-06"
     },
     {
         "name": "Hisuian Goodra",
@@ -13492,8 +13492,8 @@
           "steel",
           "dragon"
         ],
-        "released": null,
-        "shiny": null
+        "released": "2026-11-06",
+        "shiny": "2026-11-06"
     },
     {
         "name": "Hisuian Growlithe",
