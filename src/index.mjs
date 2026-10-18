@@ -112,6 +112,44 @@ const today = new Date((new Date()).setHours(0, 0, 0, 0));
 // Sort the pokemon array by number
 const sortedPokemon = pokemonData.sort((a, b) => a.number - b.number);
 
+const WEATHER_TYPE_MAP = [
+    {
+        label: 'Sunny',
+        icon: 'sunny.svg',
+        types: ['fire', 'grass', 'ground']
+    },
+    {
+        label: 'Partly Cloudy',
+        icon: 'partly-cloudy.svg',
+        types: ['normal', 'rock']
+    },
+    {
+        label: 'Cloudy',
+        icon: 'clouds.svg',
+        types: ['fairy', 'fighting', 'poison']
+    },
+    {
+        label: 'Rain',
+        icon: 'rainy.svg',
+        types: ['water', 'electric', 'bug']
+    },
+    {
+        label: 'Snow',
+        icon: 'snowing.svg',
+        types: ['ice', 'steel']
+    },
+    {
+        label: 'Fog',
+        icon: 'fog.svg',
+        types: ['dark', 'ghost']
+    },
+    {
+        label: 'Windy',
+        icon: 'windy.svg',
+        types: ['dragon', 'flying', 'psychic']
+    }
+];
+
 // Function to calculate CP
 function calculateCP(pokemon, atkIV = 15, defIV = 15, hpIV = 15, level = 50) {
     const batk = pokemon.atk; // Base attack from Pokemon
@@ -160,6 +198,30 @@ function hasSameHPAtLevel(pokemon, level) {
         hp14,
         hp15
     };
+}
+
+function getWeatherBoosts(pokemon) {
+    const pokemonTypes = new Set((pokemon.type || []).map(type => type.toLowerCase()));
+
+    return WEATHER_TYPE_MAP.filter(weather =>
+        weather.types.some(type => pokemonTypes.has(type))
+    );
+}
+
+function renderWeatherBoostIcons(pokemon) {
+    const weatherBoosts = getWeatherBoosts(pokemon);
+
+    if (weatherBoosts.length === 0) {
+        return '';
+    }
+
+    return `
+        <span class="weather-boost-icons">
+            ${weatherBoosts.map(weather => `
+                <img class="weather-boost-icon" src="icons/${weather.icon}" alt="${weather.label}" title="${weather.label}">
+            `).join('')}
+        </span>
+    `;
 }
 
 // Get modal elements
@@ -244,6 +306,10 @@ function showPokemonDetails(pokemon) {
 
     //
     cpInfo.innerHTML = `
+        <div class="stat weather-boost">
+            <div style="color: var(--pokedex-light)">WEATHER</div>
+            <div style="color: var(--pokedex-light)">${renderWeatherBoostIcons(pokemon)}</div>
+        </div>
         <div class="stat cp-levels">
             <div style="color: var(--pokedex-light)" class="stat-value" data-tooltip="CP range from 10/10/10 to 15/15/15 IVs">CP RANGES:</div>
             <div style="color: var(--pokedex-light)">L15: ${calculateCP(pokemon, 10, 10, 10, 15)} - ${calculateCP(pokemon, 15, 15, 15, 15)}</div>

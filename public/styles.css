@@ -257,6 +257,22 @@ footer {
     gap: 5px;
 }
 
+.weather-boost {
+    text-align: center;
+}
+
+.weather-boost-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-block: 10px;
+}
+
+.weather-boost-icon {
+    width: 36px;
+    height: 36px;
+}
+
 /* Modal styles */
 .modal {
     display: none;
@@ -322,7 +338,6 @@ footer {
 #modalPokemonStats {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 @media (max-width: 768px) {
